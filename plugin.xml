@@ -29,13 +29,11 @@
     
     <!-- ios -->
     <platform name="ios">
-        <config-file parent="NSDocumentsFolderUsageDescription" target="*-Info.plist">
-            <array>
-                <string>Asking for folder permissions</string>
-            </array>
-        </config-file>
-         
-        
+         <preference name="LOCATION_ALWAYS_ASK_FOR_PERMISSION" default="This app needs document folder access"/>
+        <config-file target="*-Info.plist" parent="NSDocumentsFolderUsageDescription">
+            <string>$LOCATION_ALWAYS_ASK_FOR_PERMISSION</string>
+        </config-file>        
+   
         
     </platform>
     
